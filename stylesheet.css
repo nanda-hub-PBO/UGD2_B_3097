@@ -1,0 +1,468 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+    background: transparent;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 50%;
+    width: 300px;
+    height: 100vh;
+    background: #065F46; /* Berubah ke Moss Dark */
+    transform: translateX(-50%) skewX(-20deg);
+    z-index: 0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 60px;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+}
+
+.logo a {
+    font-size: 28px;
+    color: #064E3B; /* Logo teks menyesuaikan Hijau Gelap */
+    text-decoration: none;
+    background: #fff;
+    padding: 12px 18px;
+    border-radius: 12px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+
+.logo a:hover {
+    transform: scale(1.05);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+    list-style: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #10B981; /* Berubah ke Mint Green */
+}
+
+.nav-links .btn-contact {
+    background: #fff;
+    color: #064E3B; /* Berubah ke Forest Deep */
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-weight: 600;
+}
+
+.nav-links .btn-contact:hover {
+    background: #ECFDF5; /* Berubah ke Off-White Mint */
+    color: #064E3B;
+    transform: scale(1.05);
+}
+
+.container {
+    display: flex;
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.left-side {
+    width: 50%;
+    background: #064E3B; /* Berubah ke Forest Deep */
+    padding: 150px 60px 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    z-index: 10;
+}
+
+.right-side {
+    width: 50%;
+    background: #10B981; /* Berubah ke Emerald/Mint */
+    padding: 150px 60px 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    z-index: 10;
+}
+
+.middle-layer {
+    position: absolute;
+    top: 0;
+    left: 5%; 
+    transform: translateX(-50%) skewX(-5deg);
+    width: 200px; 
+    height: 100%; /* Diubah dari 200vh menjadi 100% agar mengikuti panjang konten */
+    background: #065F46;
+    z-index: 1; 
+}
+
+.left-side h1 {
+    font-size: 50px;
+    color: #ECFDF5; /* Berubah ke Mint White agar kontras */
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 10;
+    line-height: 1.2;
+}
+
+.left-side > p {
+    font-size: 15px;
+    color: #fefefe;
+    margin-bottom: 25px;
+    position: relative;
+    z-index: 10;
+    opacity: 0.9;
+}
+
+.left-side .desc {
+    font-size: 15px;
+    color: #ECFDF5; /* Menyesuaikan latar gelap */
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 2;
+    line-height: 1.6;
+    max-width: 400px;
+}
+
+.left-side .socials {
+    display: flex;
+    gap: 12px;
+    position: relative;
+    z-index: 2;
+}
+
+.left-side .socials a {
+    width: 45px;
+    height: 45px;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    text-decoration: none;
+    color: #064E3B; /* Icon color menyesuaikan */
+    font-size: 20px;
+    transition: all 0.3s ease;
+}
+
+.left-side .socials a:hover {
+    transform: translateY(-5px);
+    background: #10B981; /* Hover ke Mint */
+    color: #fff;
+}
+
+.right-side h2 {
+    color: #fff;
+    font-size: 42px;
+    margin-bottom: 35px;
+    position: relative;
+    z-index: 2;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.profile-photo {
+    width: 380px;
+    height: 380px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0,78,59,0.3); /* Shadow disesuaikan ke arah hijau */
+    position: relative;
+    z-index: 2;
+    transition: transform 0.3s ease;
+}
+
+.profile-photo:hover {
+    transform: scale(1.02);
+}
+
+.about-card {
+    background: rgba(255,255,255,0.12);
+    padding: 35px;
+    border-radius: 20px;
+    color: #fff;
+    position: relative;
+    z-index: 2;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+.about-card h3 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #fff;
+    z-index: 2;
+}
+
+.about-card p {
+    margin-bottom: 12px;
+    opacity: 0.9;
+    line-height: 1.6;
+}
+
+.about-card strong {
+    color: #F59E0B; /* Diganti ke Amber/Gold agar pop-out di atas hijau */
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.skill-item {
+    background: rgba(255,255,255,0.15);
+    padding: 28px 20px;
+    border-radius: 18px;
+    text-align: center;
+    color: #fff;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.2);
+    transition: all 0.35s ease;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.skill-item:hover {
+    transform: translateY(-12px);
+    background: rgba(255,255,255,0.25);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.35);
+    border-color: rgba(255,255,255,0.4);
+}
+
+.skill-item i {
+    font-size: 45px;
+    margin-bottom: 12px;
+    transition: all 0.35s ease;
+    display: block;
+    z-index: 2;
+}
+
+.skill-item:hover i {
+    transform: scale(1.25);
+    color: #F59E0B; /* Icon hover ke Amber */
+}
+
+.skill-item p {
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+.section-title {
+    color: #064E3B; /* Berubah ke Forest Deep agar kontras di sisi kanan yang terang */
+    font-size: 18px;
+    margin: 40px 0 20px;
+    position: relative;
+    z-index: 2;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.section-title:first-child {
+    margin-top: 0;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    position: relative;
+    z-index: 2;
+}
+
+.portfolio-card {
+    background: rgba(255,255,255,0.15);
+    border-radius: 20px;
+    overflow: hidden;
+    color: #fff;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.2);
+    transition: all 0.35s ease;
+}
+
+.portfolio-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.4);
+    border-color: rgba(255,255,255,0.4);
+}
+
+/* Bagian ini menggantikan aturan .portfolio-card img yang lama */
+.portfolio-card img {
+    width: 100%;
+    aspect-ratio: 0.25 / 0.25 ; /* Memaksa rasio gambar menjadi 1:1 (persegi) */
+    object-fit: cover;   /* Memastikan gambar tidak gepeng, akan terpotong rapi */
+    transition: transform 0.3s ease;
+
+}
+
+.portfolio-card:hover img {
+    transform: scale(1.00);
+}
+
+.portfolio-card .info {
+    padding: 22px;
+}
+
+.portfolio-card h4 {
+    font-size: 18px;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.portfolio-card p {
+    font-size: 14px;
+    opacity: 0.85;
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+.portfolio-card .buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.portfolio-card .buttons a {
+    padding: 8px 18px;
+    background: rgba(255,255,255,0.2);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 25px;
+    font-size: 13px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.portfolio-card .buttons a:hover {
+    background: #fff;
+    color: #064E3B; /* Hover teks menyesuaikan */
+    transform: scale(1.08);
+}
+
+.contact-form {
+    position: relative;
+    z-index: 2;
+    max-width: 500px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 18px 22px;
+    margin-bottom: 18px;
+    border: none;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.2);
+    color: #fff;
+    font-size: 15px;
+    transition: all 0.3s ease;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: rgba(255,255,255,0.7);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    background: rgba(255,255,255,0.3);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.contact-form textarea {
+    height: 140px;
+    resize: none;
+}
+
+.contact-form button {
+    width: 100%;
+    padding: 18px;
+    background: #fff;
+    color: #064E3B; /* Berubah ke Forest Deep */
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.contact-form button:hover {
+    background: #ECFDF5;
+    transform: scale(1.02);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+footer {
+    background: #064E3B; /* Footer menyesuaikan Forest Deep */
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    z-index: 2;
+}
+
+@media (max-width: 1024px) {
+    .navbar { padding: 15px 30px; }
+    .left-side, .right-side { padding: 120px 40px 40px; }
+    .left-side h1 { font-size: 42px; }
+    .profile-photo { width: 300px; height: 300px; }
+    .skills-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 768px) {
+    .container { flex-direction: column; }
+    .left-side, .right-side { width: 100%; padding: 100px 30px 30px; }
+    .left-side::after, .right-side::before { display: none; }
+    .navbar { padding: 15px 20px; flex-direction: column; gap: 15px; }
+    .nav-links { gap: 20px; flex-wrap: wrap; justify-content: center; }
+    .left-side h1 { font-size: 36px; }
+    .right-side h2 { font-size: 32px; }
+    .profile-photo { width: 250px; height: 250px; }
+    .skills-grid { grid-template-columns: repeat(2, 1fr); gap: 15px; }
+    .portfolio-grid { grid-template-columns: 1fr; }
+    .skill-item { padding: 22px 15px; }
+    .skill-item i { font-size: 38px; }
+}
+
+@media (max-width: 480px) {
+    .left-side h1 { font-size: 30px; }
+    .skills-grid { grid-template-columns: repeat(2, 1fr); }
+    .contact-form { max-width: 100%; }
+}
