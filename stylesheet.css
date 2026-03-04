@@ -104,7 +104,7 @@ body::before {
 
 .right-side {
     width: 50%;
-    background: #10B981; /* Berubah ke Emerald/Mint */
+    background: #10B981;
     padding: 150px 60px 60px;
     display: flex;
     flex-direction: column;
@@ -119,14 +119,14 @@ body::before {
     left: 5%; 
     transform: translateX(-50%) skewX(-5deg);
     width: 200px; 
-    height: 100%; /* Diubah dari 200vh menjadi 100% agar mengikuti panjang konten */
+    height: 100%; 
     background: #065F46;
     z-index: 1; 
 }
 
 .left-side h1 {
     font-size: 50px;
-    color: #ECFDF5; /* Berubah ke Mint White agar kontras */
+    color: #ECFDF5; 
     margin-bottom: 30px;
     position: relative;
     z-index: 10;
